@@ -9,7 +9,7 @@
     },
     {
       "cell_type": "code",
-      "execution_count": 3,
+      "execution_count": null,
       "id": "ee8b4ed2",
       "metadata": {},
       "outputs": [],
@@ -337,20 +337,9 @@
     },
     {
       "cell_type": "code",
-      "execution_count": 5,
+      "execution_count": null,
       "metadata": {},
-      "outputs": [
-        {
-          "name": "stdout",
-          "output_type": "stream",
-          "text": [
-            "Address_1: mhrr96f55jEGPSLHJcAp27PBYwF4CaXDpF\n",
-            "Address_2: muRpcoZ3rP8ZHMppnX4C6XRdVjQaFJKCYV\n",
-            "MultiSig Address: 2MsmLzrzLuxAVC7AVYdAbqFwZBfG44Cteru\n",
-            "Redeem Script (hex): 522102d0b448dadb36ff65c358784f4a9edbaf661c2534a09e0bb6f1c25a81f53cf4c0210267e6e5c8c15cd39188f7550846ccdae113f961d90a85ad4b664e720ab6e19e9f52ae\n"
-          ]
-        }
-      ],
+      "outputs": [],
       "source": [
         "\n",
         "sk1 = os.urandom(32)\n",
@@ -363,12 +352,7 @@
         "\n",
         "redeem_script = OP_2 + push_data(pub1) + push_data(pub2) + OP_2 + OP_CHECKMULTISIG\n",
         "MultiSig_Address = redeem_script_to_p2sh_address(redeem_script, testnet=True)\n",
-        "Redeem_Script_hex = redeem_script.hex()\n",
-        "\n",
-        "print(f'Address_1: {Address_1}')\n",
-        "print(f'Address_2: {Address_2}')\n",
-        "print(f'MultiSig Address: {MultiSig_Address}')\n",
-        "print(f'Redeem Script (hex): {Redeem_Script_hex}')"
+        "Redeem_Script_hex = redeem_script.hex()\n"
       ]
     },
     {
@@ -380,12 +364,12 @@
     },
     {
       "cell_type": "code",
-      "execution_count": 6,
+      "execution_count": null,
       "metadata": {},
       "outputs": [],
       "source": [
         "\n",
-        "FAUCET_TXID = '46ad0dbd3e363f848d709f5e7b4c6cf405aea3ea1d499978b4388b4d6779b639'  # set after faucet\n",
+        "FAUCET_TXID = ''  # set after faucet\n",
         "MANUAL_UTXOS = None  # optional list of dicts: [{'txid':..., 'vout':..., 'value':...}]\n",
         "\n",
         "utxos = fetch_utxos(Address_1) if MANUAL_UTXOS is None else MANUAL_UTXOS\n",
@@ -411,7 +395,7 @@
     },
     {
       "cell_type": "code",
-      "execution_count": 7,
+      "execution_count": null,
       "metadata": {},
       "outputs": [],
       "source": [
@@ -464,12 +448,12 @@
     },
     {
       "cell_type": "code",
-      "execution_count": 8,
+      "execution_count": null,
       "metadata": {},
       "outputs": [],
       "source": [
         "\n",
-        "OP_RETURN_TEXT = 'Grachev Vasiliy'\n",
+        "OP_RETURN_TEXT = 'Lastname FirstName'\n",
         "\n",
         "def build_step4(fee_rate: int):\n",
         "    inputs = [{\n",
@@ -516,7 +500,7 @@
     },
     {
       "cell_type": "code",
-      "execution_count": 9,
+      "execution_count": null,
       "metadata": {},
       "outputs": [],
       "source": [
@@ -569,24 +553,9 @@
     },
     {
       "cell_type": "code",
-      "execution_count": 10,
+      "execution_count": null,
       "metadata": {},
-      "outputs": [
-        {
-          "name": "stdout",
-          "output_type": "stream",
-          "text": [
-            "Address_1: mhrr96f55jEGPSLHJcAp27PBYwF4CaXDpF\n",
-            "Address_2: muRpcoZ3rP8ZHMppnX4C6XRdVjQaFJKCYV\n",
-            "MultiSig Address: 2MsmLzrzLuxAVC7AVYdAbqFwZBfG44Cteru\n",
-            "Redeem Script (hex): 522102d0b448dadb36ff65c358784f4a9edbaf661c2534a09e0bb6f1c25a81f53cf4c0210267e6e5c8c15cd39188f7550846ccdae113f961d90a85ad4b664e720ab6e19e9f52ae\n",
-            "Faucet Transaction_ID: 46ad0dbd3e363f848d709f5e7b4c6cf405aea3ea1d499978b4388b4d6779b639\n",
-            "TXID_step3: 5ec9cc62d7c0c6e67222173599d89a1385abfc8d514e02d93f04d55c221b7e3f\n",
-            "TXID_step4: c0152f8fb4a35e7e3811dd14c5c2ef1602db61f71b66d425989621dfb6eca4e6\n",
-            "TXID_step5: 69968312296695687359ce2179ddd71fa26fed7222acabd03deb302613885a0d\n"
-          ]
-        }
-      ],
+      "outputs": [],
       "source": [
         "\n",
         "print(f'Address_1: {Address_1}')\n",
